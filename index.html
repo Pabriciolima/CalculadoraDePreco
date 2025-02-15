@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Preço de Venda</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <!-- Cabeçalho com Modo Noturno -->
+          <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Calculadora de Preço de Venda</h5>
+            <button id="darkModeToggle" class="btn btn-light btn-sm p-1">
+              <span id="darkModeIcon">🌙</span>
+            </button>
+            <h5 class="mb-0 text-white">Valor Final: <span class="text-warning" id="finalPrice">R$ 0,00</span></h5>
+          </div>
+          <div class="card-body">
+            <form id="priceCalculator">
+              <!-- Estado -->
+              <div class="mb-3">
+                <label for="state" class="form-label">Estado:</label>
+                <select class="form-select" id="state" required>
+                  <option value="" disabled selected>Selecione o estado</option>
+                  <option value="AC">AC</option>
+                  <option value="AL">AL</option>
+                  <option value="AM">AM</option>
+                  <option value="AP">AP</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="DF">DF</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MA">MA</option>
+                  <option value="MT">MT</option>
+                  <option value="MS">MS</option>
+                  <option value="MG">MG</option>
+                  <option value="PA">PA</option>
+                  <option value="PB">PB</option>
+                  <option value="PR">PR</option>
+                  <option value="PE">PE</option>
+                  <option value="PI">PI</option>
+                  <option value="RN">RN</option>
+                  <option value="RS">RS</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RO">RO</option>
+                  <option value="RR">RR</option>
+                  <option value="SC">SC</option>
+                  <option value="SP">SP</option>
+                  <option value="SE">SE</option>
+                  <option value="TO">TO</option>
+                </select>
+              </div>
+
+              <!-- Preço de Custo -->
+              <div class="mb-3">
+                <label for="costPrice" class="form-label">Preço de Custo do Item (R$):</label>
+                <input type="number" class="form-control" id="costPrice" step="0.01" required>
+              </div>
+
+              <!-- IPI -->
+              <div class="mb-3">
+                <label for="ipi" class="form-label">IPI (%):</label>
+                <input type="number" class="form-control" id="ipi" step="0.01" value="0">
+              </div>
+
+              <!-- Frete -->
+              <div class="mb-3">
+                <label for="freight" class="form-label">Frete (R$):</label>
+                <input type="number" class="form-control" id="freight" step="0.01" value="0">
+              </div>
+
+              <!-- PIS/COFINS -->
+              <div class="mb-3">
+                <label class="form-label">PIS/COFINS?</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="pisCofins" id="pisCofinsYes" value="yes">
+                  <label class="form-check-label" for="pisCofinsYes">Sim</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="pisCofins" id="pisCofinsNo" value="no" checked>
+                  <label class="form-check-label" for="pisCofinsNo">Não</label>
+                </div>
+              </div>
+
+              <!-- Margem -->
+              <div class="mb-3">
+                <label for="margin" class="form-label">Margem de Lucro (%):</label>
+                <input type="number" class="form-control" id="margin" step="0.01" required>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
